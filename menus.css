@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -9,7 +13,10 @@ body {
     background-size:cover;
     color: whitesmoke;
     grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 5px;
     /* height: 100px; */
+    /* justify-content: space-evenly; */
+    /* align-content: center; */
 }
 
 .heading img {
@@ -19,7 +26,7 @@ body {
     box-shadow: 3px 3px black;
 }
 
-.heading h1 {
+h1 {
     font-size: 3rem;
     text-shadow: 3px 3px black;
 }
@@ -33,24 +40,26 @@ body {
 }
 
 .menu {
-    margin: 20px 5px 20px 10px;
+    height: 300px;
+    margin: 0;
     padding: 0;
     display: grid;
     grid-template-columns: 2.5fr 1fr 1fr;
-    grid-template-rows: 1fr 0.25fr;
+    grid-template-rows: 252px 45px;
     gap: 10px;
     font-family: 'PT Sans', sans-serif;
     color: rgb(46, 45, 45)
 }
 
 .menu img {
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    height: 100%;
     border-radius: 4px;
 }
 
 .menu-photo {
     grid-row: span 2;
+    margin: 5px;
 }
 
 .menu-photo img {
@@ -91,6 +100,8 @@ ul li {
 
 hr {
     border: 0.5px solid rgb(156, 140, 140);
+    padding: 0;
+    margin: 10px 0 10px 0;
 }
 
 .logo {
@@ -100,7 +111,62 @@ hr {
 
 footer {
     font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif;
-    margin: 20px;
+    margin-top: 10px;
+    padding-left: 10px;
     display: flex;
     align-items: center;
+    background-color: black;
+    width: 100%;
+    height: 70px;  
+    color: rgba(255, 255, 255, 0.808);
 }
+
+footer a:link {
+    color: rgba(255, 255, 255, 0.808);
+}
+
+footer a:visited {
+    color: rgba(240, 240, 47, 0.846);
+}
+
+footer a:hover {
+    color: rgb(0, 251, 255)
+}
+
+@media (min-width: 760px) {
+    body {
+        column-count: 2;
+    }
+
+    .heading {
+        column-span: all;
+        margin-bottom: 20px;
+    }
+
+    body .heading img {
+        width: 80px;
+        height: 80px;
+        border-radius: 15px;
+        justify-content: flex-end;
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    .menu {
+        margin-left: 10px;
+        margin-bottom: 20px;
+    }
+
+    footer {
+        column-span: all;
+    }
+
+    hr {
+        display: none;
+        margin: 0;
+        padding: 0;
+    }
+}
+
